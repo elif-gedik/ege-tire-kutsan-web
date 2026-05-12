@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Tire Hakkında</title>
+  <link rel="stylesheet" href="../css-elif/style.css" />
+  <link rel="icon"  type="image" href="../gorseller-elif/logo.jpg">
+</head>
+
+<body>
+  <script src="../js-elif/btn.js"></script>
+  <!--! headeer section start -->
+  <header class="header">
+    <a href="../html-elif/index.html" class="logo">
+      <img src="../gorseller-elif/logo.jpg" alt="logo" />
+    </a>
+
+    <nav class="navbar">
+      <a href="../html-elif/index.html">Ana Sayfa</a>
+      <div class="dropdown">
+        <a href="../html-elif/tirehakkinda1.html" class="active">Tire hakkında ▾</a>
+        <div class="dropdown-content">
+          <a href="#tarihce">Tarihçe</a>
+          <a href="#ulasim">Tire'de ulaşım</a>
+          <a href="#el-sanatlari">El sanatları</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="../html-elif/gezilecekyerler.html" class="active">Gezilecek Yerler ▾</a>
+        <div class="dropdown-content">
+          <a href="#muze">Kütüphane ve Müzeler</a>
+          <a href="#tarihi-yapilar">Tarihi Yapılar</a>
+          <a href="#dogal-guzellik">Tire'nin Doğal Güzellikleri</a>
+          <a href="#pazar">Salı Pazarı</a>
+          <a href="#kafeler">Kafeler</a>
+          <a href="#yakin-yerler">Tire'ye yakın gezilebilecek yerler</a>
+        </div>
+      </div>
+
+      <a href="../html-elif/lezzetler.html">Lezzetler</a>
+    </nav>
+
+    <div class="buttons">
+      <button class="menu-toggle" aria-label="Menüyü Aç/Kapat">☰</button>
+    </div>
+  </header>
+  <!--! headeer section end   -->
+  <!--! home section start -->
+  <section class="home">
+    <div class="content">
+      <h3>TİRE </h3>
+      <p>Tarihin, Lezzetin ve Doğanın Buluştuğu Şehir</p>
+    </div>
+  </section>
+  <!--! home section end -->
+  <!--! video section start -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/MctiqNMALJE?si=fn8Y6taI1TFRBTen" title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <!--! video section end -->
+
+  <!--! menu section start -->
+  <section class="blogs">
+    <h1 class="heading">Tire'de <span>Ulaşım</span></h1>
+    <div class="box-container">
+      <div class="box">
+        <div class="image">
+          <img src="../gorseller-elif/tire.jpg" alt="tire hakkında" />
+        </div>
+        <div class="content">
+          <a href="../html-elif/tirehakkinda1.html" class="title">Tire Hakkında</a>
+          <p>
+            İzmir’in doğusunda yer alan Tire, tarih boyunca birçok medeniyete
+            ev sahipliği yapmış köklü bir yerleşim yeridir. Antik çağlarda
+            Teira olarak bilinen ilçe, Lidyalılar, Persler...
+          </p>
+          <a href="../html-elif/tirehakkinda1.html" class="btn">daha fazlası</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image">
+          <img src="../gorseller-elif/menu-1.jpg" alt="tire hakkında" />
+        </div>
+        <div class="content">
+          <a href="../html-elif/gezilecekyerler.html" class="title">Gezilecek Yerler</a>
+          <p>
+            Tire’nin tarihi, Tunç Çağı’na, yani yaklaşık M.Ö. 3000’lere kadar uzanır. Bölgedeki ilk yerleşimlerin bu
+            dönemde başladığı tahmin edilmektedir. Antik çağda Tire, Teira veya Tira adıyla anılmıştır...
+          </p>
+          <a href="../html-elif/gezilecekyerler.html" class="btn">daha fazlası</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="image">
+          <img src="../gorseller-elif/lezzetler.jpg" alt="tire hakkında" />
+        </div>
+        <div class="content">
+          <a href="../html-elif/lezzetler.html" class="title">Lezzetler</a>
+          <p>
+            Tire Şiş Köfte, İzmir’in Tire ilçesine özgü, Ege mutfağının sevilen lezzetlerinden biridir. İnce uzun
+            şekilde şişlere dizilerek hazırlanan bu köfte, özellikle odun kömüründe pişirilmesiyle meşhurdur. Diğer
+            köfte çeşitlerinden en büyük farkı...
+          </p>
+          <a href="../html-elif/lezzetler.html" class="btn">daha fazlası</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--! menu section end -->
+
+  <!-- contact section start -->
+  <section class="contact-section">
+    <h2>Dilek ve Şikayetleriniz</h2>
+    <form action="gonder.php" method="POST" class="contact-form">
+      <label for="name">Adınız</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">E-posta</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Mesajınız</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Gönder</button>
+    </form>
+  </section>
+  <!-- contact section start -->
+
+  <!--! footer section start -->
+  <section class="footer">
+    <div class="share">
+      <a href="#" class="fab fa-facebook"></a>
+      <a href="#" class="fab fa-twitter"></a>
+      <a href="#" class="fab fa-instagram"></a>
+      <a href="#" class="fab fa-linkedin"></a>
+      <a href="#" class="fab fa-pinterest"></a>
+    </div>
+    <div class="links">
+      <a href="../html-elif/index.html" class="active">Ana Sayfa</a>
+      <a href="../html-elif/tirehakkinda1.html">Tire Hakkında</a>
+      <a href="../html-elif/gezilecekyerler.html">Gezilecek Yerler</a>
+      <a href="../html-elif/lezzetler.html">Lezzetler</a>
+    </div>
+    <div class="credit">
+      <span>Elif Gedik</span> tarafından oluşturuldu. | Tüm hakları saklıdır.
+    </div>
+  </section>
+  <!--! footer section end -->
+
+</body>
+
+</html>

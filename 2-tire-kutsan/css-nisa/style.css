@@ -1,0 +1,1045 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+:root {
+  --main-color: #ffffff;
+  --black-color: #0e0e0e;
+  --border: 0.1rem solid #ffffff;
+}
+
+/* Genel Stil */
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none; /*tüm linklerin alt çizgisini kaldırır*/
+  border: none;
+  transition: 0.2s ease; /*tüm elementlerde animasyon geçişlerini varsayılan yapar*/
+  color: #0f0764;
+}
+
+html {
+  font-size: 100%;
+  overflow-x: hidden; /*Sayfanın yatay kaydırılmasını engeller*/
+  overflow-y: auto;
+  scroll-behavior: smooth; /*sayfa içi linklerde yumuşak kaydırma sağlar*/
+  width: 100%; /*tüm genişliği kapsar*/
+}
+
+/* Scrollbar Stili */
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  background-color: white;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: var(--main-color);
+  background-size: contain;
+} /*kaydırma çubuğunun hareket eden kısmı yuvarlak ve beyaz yapıld*/
+
+html::-webkit-scrollbar-track {
+  /*arka plan*/
+  background-color: gray;
+}
+
+/* Sayfa Arkaplanı */
+body {
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /*yatay taşmayı engeller*/
+  background-image: none;
+}
+
+/* Başlık Alanı */
+h1 {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3); /* Hafif gölge efekti */
+}
+
+.header {
+  background-color: white;
+  padding: 0 5%; /*yanlardan boşluk*/
+}
+
+.header .logo img {
+  height: 8rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /*Bu öğeler dikeyde ortalanır*/
+  gap: 20px; /*Öğeler arasında 20 piksel boşluk bırakılır*/
+}
+
+.header-text h1 {
+  font-size: 26px; /*yazı boyutu*/
+  font-weight: bold; /*yazı kalın*/
+}
+
+.header-text h2 {
+  font-size: 22px;
+  color: gray;
+}
+
+.header-text h1,
+.header-text h2 {
+  width: 100%; /*genişlik yaty boyut*/
+}
+
+/* Ana Sayfa Arkaplanı */
+.homepage {
+  position: relative; /*normal konuma göre yerleştirir*/
+  min-height: 82vh;
+  background-image: url("../görseller-nisa/images/AnaSayfa.jpg");
+  background-repeat: no-repeat; /*arka plan resmi tekrarlanmaz*/
+  background-position: center center; /*Arka plan görseli hem yatayda hem dikeyde ortalanır*/
+  background-size: cover; /*Arka plan resmi, öğeyi tamamen kaplayacak şekilde ölçeklenir*/
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /*görsel veya videonun kapsayıcı alana nasıl sığdırılacağını belirler*/
+}
+
+/*tkmyo foto*/
+.gallery-link {
+  position: absolute; /*belirli bir konuma sabitlemek*/
+  bottom: 10px; /*bulunduğu konumdan yukarı doğru kaydırır*/
+  right: 10px;
+  color: #0f0764;
+  background: rgba(255, 255, 255, 0.6); /* Hafif şeffaf arka plan */
+  padding: 10px 15px; /*İç boşluk oluşturu*/
+  border-radius: 20px;
+  font-size: 0.7rem;
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+.gallery-link:hover {
+  background-color: rgba(128, 128, 128, 0.2); /* Hafif gri oval arka plan */
+  border-radius: 20px; /* Daha oval görünüm */
+  padding: 10px 15px; /* Hover efektiyle rahat görünmesi için */
+}
+
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 2%;
+  left: 15%;
+  gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 50px;
+}
+
+.icon-link,
+.menu-toggle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #000;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none; /* Bilgisayarda görünmesin */
+}
+
+/* Sadece mobilde göster */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Menü butonunun altı */
+    right: 20px;
+    background: white;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    z-index: 99;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+}
+
+.navbar a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #0f0764;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background-color: rgba(128, 128, 128, 0.2); /* Hafif gri oval arka plan */
+  border-radius: 20px; /* Daha oval görünüm */
+  padding: 10px 15px; /* Hover efektiyle rahat görünmesi için */
+}
+
+/* Buton */
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--black-color);
+  cursor: pointer;
+}
+
+.content-box {
+  max-width: 946px;
+  padding: 20px;
+  border: 5px solid gray;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 31px;
+  font-weight: bold;
+  color: gray;
+}
+
+hr {
+  border: none; /* Varsayılan çizgi kaldırıldı */
+  height: 2px; /* Çizgi kalınlığı */
+  background-color: gray; /* Çizgi rengi */
+}
+
+/* İçeriklerin yan yana durması için */
+.content-layout {
+  display: flex;
+  flex-wrap: wrap; /* Küçük ekranlarda alt alta geçmesine izin verir */
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container,
+.map-container {
+  flex: 1; /* İki öğeyi eşit genişlikte tutar */
+  max-width: 48%; /* Eşit genişlikte olmalarını sağlar */
+}
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out; /* Geçiş efekti ekle */
+}
+
+.icon-button:hover img {
+  opacity: 0.7; /* Üzerine gelince opaklığı azalt */
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/*duyuru*/
+.announcement-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  margin: 77px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.announcement-section .h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+}
+
+.event-item {
+  background: #ffffff;
+  margin: 10px 0;
+  padding: 15px;
+  border-left: 5px solid #0f0764;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.event-item:hover {
+  transform: scale(1.02);
+}
+
+.event-title {
+  font-size: 20px;
+  color: #0f0764;
+  margin: 0 0 5px;
+}
+
+.event-date {
+  font-size: 14px;
+  color: gray;
+}
+
+.event-description {
+  font-size: 16px;
+  color: gray;
+}
+
+.footer .share {
+  padding: 2rem 0;
+}
+
+.footer .share a {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  color: white;
+  font-size: 1.5rem;
+  border: 1px solid white; /* veya başka bir uygun değer */
+  border-radius: 50%;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer .share a:hover {
+  background-color: #0f0764;
+}
+
+.footer {
+  background-color: gray; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  text-align: center; /* İçeriği ortala */
+  padding: 20px; /* İç boşluk */
+}
+
+.footer h1,
+.footer h4 {
+  margin-bottom: 15px; /* Başlıkların arası */
+}
+
+.footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background-color: white;
+  color: #0f0764;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background-color: gray;
+  color: #0f0764;
+  transition: background-color 0.3s ease-in-out; /* Geçiş efekti */
+}
+
+.footer-content p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.footer-content a {
+  color: #ffdd57;
+  text-decoration: none;
+}
+
+.credit {
+  background-color: #0f0764;
+  color: white;
+  font-weight: 200;
+}
+
+/*hakkımızda başlangıç*/
+
+h1 {
+  width: fit-content; /* İçeriğe göre genişlik ayarla */
+  margin: 0 auto; /* Sağ ve sol boşlukları otomatik ayarla */
+}
+
+.navbar1 {
+  position: relative; /* Mutlak değil, normal akışta konumlanır */
+  top: 20px; /* Üst boşluk */
+  left: auto; /* Otomatik hizalama */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgb(128, 128, 128, 0.8);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+.navbar1 a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #0f0764;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.navbar1 a:hover {
+  background-color: rgba(128, 128, 128, 0.2); /* Hafif gri oval arka plan */
+  border-radius: 20px; /* Daha oval görünüm */
+  padding: 10px 15px; /* Hover efektiyle rahat görünmesi için */
+}
+
+.tarihce h2 {
+  width: fit-content; /* İçeriğe göre genişlik ayarla */
+  margin: 0 auto; /* Sağ ve sol boşlukları otomatik ayarla */
+}
+
+.tarihce p {
+  text-transform: none;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+  color: black;
+}
+
+.misyonvizyon p {
+  text-transform: none;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+  color: black;
+}
+
+/* hakkımızda yönetim */
+.yonetim {
+  text-align: center;
+  padding: 20px;
+}
+
+.yonetim2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+.card img {
+  width: 100px;
+  height: 120px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.card h4 {
+  font-size: 18px;
+  color: #0f0764;
+}
+
+.card p {
+  font-size: 14px;
+  color: #333;
+}
+
+.card a {
+  text-decoration: none;
+  color: #0f0764;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: gray;
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.organizasyonsemasi img {
+  display: block; /* Resmi blok öğe yapar */
+  margin: 20px auto; /* Ortalamayı sağlar */
+  width: 60%; /* Boyutunu küçültür */
+  max-width: 500px; /* Maksimum genişliği belirler */
+  height: auto; /* Oranı korur */
+}
+
+.mudurlerimiz {
+  text-align: center;
+  padding: 20px;
+}
+
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse; /* Kenarlıkları birleştirerek daha düzenli görünmesini sağlar */
+  box-shadow: 0px 4px 8px #0f0764; /* Hafif bir gölge efekti */
+}
+
+th,
+td {
+  border: 1px solid gray;
+  padding: 12px;
+  text-align: center;
+  color: black;
+}
+
+th {
+  background-color: #0f0764;
+  color: white;
+  font-size: 18px;
+}
+
+.etkinliklerimiz {
+  text-align: center;
+  padding: 20px;
+}
+
+.etkinliklerimiz ul {
+  display: inline-block; /* Listenin ortalanmasını sağlar */
+  text-align: left; /* Madde işaretlerinin düzenli görünmesi için */
+  list-style-position: inside; /* Madde işaretlerini içeri alır */
+  margin: 20px auto; /* Listeyi ortalar */
+}
+
+.etkinliklerimiz li {
+  color: black;
+}
+
+/*hakkımızda bitiş*/
+
+/*programlar başlangıç*/
+.bilgisayarprogramciligi p,
+.bilgisayarprogramciligi ol,
+.bilgisayarprogramciligi ul,
+.bilgisayarprogramciligi li,
+.gidateknolojisi p,
+.gidateknolojisi ol,
+.gidateknolojisi li,
+.muhasebevevergiuygulamalari p,
+.muhasebevevergiuygulamalari ol,
+.muhasebevevergiuygulamalari li {
+  text-transform: none;
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px;
+  color: black;
+}
+
+.bilgisayarprogramciligi li,
+.gidateknolojisi li,
+.muhasebevevergiuygulamalari li {
+  text-transform: none;
+  margin: 0; /* margin sıfırlanabilir */
+  padding: 5px 10px; /* küçük padding */
+  color: black;
+}
+
+.bilgisayarprogramciligi h3,
+.gidateknolojisi h3,
+.muhasebevevergiuygulamalari h3 {
+  margin: 20px auto 5px auto;
+  color: gray;
+  text-transform: none;
+  width: 80%;
+}
+
+.video-container {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  padding-left: 10%;
+  margin: 0.5rem;
+}
+
+.video-container iframe {
+  display: block;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  height: 200px;
+  aspect-ratio: 16 / 9;
+}
+
+/*programlar bitiş*/
+
+/*akademik takvim başlangıç*/
+.akademiktakvim {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.akademiktakvim p {
+  font-size: 16px;
+  color: black;
+  background-color: gainsboro; /* Açık gri arka plan */
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.pdflink {
+  font-weight: bold;
+  color: #0f0764;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.pdflink:hover {
+  color: gray;
+}
+/*akademik başlangıç bitiş*/
+
+/*öğretim görevlileri başlangıç*/
+.akademikpersonel {
+  font-family: Arial, sans-serif;
+  color: gray;
+  padding: 20px;
+}
+
+.akademikpersonel h3 {
+  color: #0f0764;
+}
+
+.akademikpersonel div {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.akademikpersonel img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 10%;
+  display: block;
+  margin: 10px auto;
+}
+
+.akademikpersonel p {
+  font-size: 14px;
+  color: #555;
+}
+
+.akademikpersonel p strong {
+  color: #222;
+}
+/*öğretim görevlileri bitiş*/
+
+/*ders programları başlangıç*/
+.dersprogramlari {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.dersprogramlari p {
+  font-size: 16px;
+  color: black;
+  background-color: gainsboro; /* Açık gri arka plan */
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+/*ders programları bitiş*/
+
+/*sınav takvimleri başlangıç*/
+
+.sinavtakvimleri {
+  font-family: Arial, sans-serif;
+
+  padding: 20px;
+  text-align: center;
+}
+
+.sinavtakvimleri p {
+  font-size: 16px;
+  color: black;
+  background-color: gainsboro;
+  padding: 15px;
+  margin: 15px auto;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+/*sınav takvimleri bitiş*/
+
+.hakkimizda hr,
+.tarihce hr,
+.misyonvizyon hr,
+.organizasyonsemasi hr,
+.yonetim hr,
+.mudurlerimiz hr,
+.etkinliklerimiz hr,
+.bilgisayarprogramciligi hr,
+.gidateknolojisi hr,
+.muhasebevevergiuygulamalari hr,
+.akademiktakvim hr,
+.akademikpersonel hr,
+.dersprogramlari hr,
+.sinavtakvimleri hr {
+  width: 50%;
+  border: 1px solid #ccc;
+  margin: 20px auto;
+}
+
+/*tosbi*/
+.tosbiheader {
+  background-color: white;
+  padding: 0 5%;
+}
+
+.tosbiheader img {
+  height: 8rem;
+}
+
+.tosbiheader-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tosbiheader-text h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #8bc34a;
+}
+
+.tosbiheader-text h2 {
+  font-size: 22px;
+  color: gray;
+}
+
+.tosbiheader-text h1,
+.tosbiheader-text h2 {
+  width: 100%;
+}
+
+/*tosbi footer*/
+.tosbifooter {
+  background-color: #000000cc; /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  text-align: center; /* İçeriği ortala */
+  padding: 20px; /* İç boşluk */
+}
+
+.tosbifooter .share {
+  padding: 2rem 0;
+}
+
+.tosbifooter .share a {
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  color: white;
+  font-size: 1.5rem;
+  border: 1px solid white; /* veya başka bir uygun değer */
+  border-radius: 50%;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.tosbifooter .share a:hover {
+  background-color: #8bc34a;
+}
+
+.tosbifooter h1,
+.tosbifooter h4 {
+  color: #8bc34a;
+  margin-bottom: 15px; /* Başlıkların arası */
+}
+
+.tosbifooter-content p,
+.tosbifooter-content i {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #8bc34a;
+}
+
+.tosbifooter-content a {
+  color: #ffdd57;
+  text-decoration: none;
+}
+
+.tosbifooter .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.tosbicredit {
+  background-color: #8bc34a;
+  color: white;
+  font-weight: 200;
+}
+
+/*tosbi foto*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 70%;
+  margin: 0 auto; /* Ortalamak için */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px #000000cc;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/*tosbi anasayfa*/
+.tosbilinks i {
+  color: #8bc34a;
+}
+
+.tosbilinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.tosbilinks a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background-color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.tosbilinks a:hover {
+  background-color: #00000000;
+  color: #8bc34a;
+  transition: background-color 0.3s ease-in-out; /* Geçiş efekti */
+}
+
+/*tosbihakkinda*/
+.tosbihakkinda h3,
+.tosbihakkinda p {
+  text-align: center; /* Ortala */
+  width: 80%; /* İçeriği biraz daraltarak düzgün görünmesini sağla */
+  margin: 0 auto; /* Kenarlardan otomatik boşluk bırak */
+  line-height: 1.6; /* Okunabilirlik için satır yüksekliği */
+}
+
+.tosbihakkinda h3 {
+  padding-top: 20px;
+  color: #8bc34a;
+  width: fit-content; /* İçeriğe göre genişlik ayarla */
+  text-align: center;
+}
+
+.tosbihakkinda p {
+  padding: 20px;
+  text-align: left; /* Yazıları sola hizala */
+  color: rgb(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .tosbiheader-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tosbiheader img {
+    height: 6rem;
+  }
+
+  .tosbiheader-text h1 {
+    font-size: 22px;
+  }
+
+  .tosbiheader-text h2 {
+    font-size: 18px;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90%;
+  }
+
+  .tosbihakkinda h3,
+  .tosbihakkinda p {
+    width: 95%;
+    padding: 10px;
+  }
+}
+
+/*giris*/
+.form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 82vh; /* Sayfa içinde ortalamak için yeterli alan */
+}
+
+.form-wrapper {
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px gray;
+  width: 90%;
+  width: 700px;
+}
+
+.form-box label {
+  display: block;
+  font-weight: 600;
+  margin: 10px 0 5px;
+  margin-bottom: 15px;
+}
+
+.form-box input[type="text"],
+.form-box select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.form-box input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #0f0764;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-box input[type="submit"]:hover {
+  background-color: gray;
+}
+
+.icon-link {
+  position: absolute;
+  top: 39px;
+  right: 80px;
+  color: #0f0764;
+  z-index: 20;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  .header .logo img {
+    height: 5rem;
+  }
+
+  .header-text h1 {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .header-text h2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    position: static; /* üstte sabit kalmasın */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 10px;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-wrapper {
+    width: 100%;
+    padding: 20px 15px;
+  }
+}
